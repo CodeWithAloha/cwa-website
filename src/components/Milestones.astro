@@ -1,0 +1,79 @@
+---
+// TODO: Update all of these
+const milestones = [
+	{
+		icon: 'emoji_events',
+		stat: '10+',
+		label: 'Volunteers',
+		body: 'Hit a major community growth milestone this quarter.',
+		accent: 'primary',
+	},
+	{
+		icon: 'auto_awesome',
+		stat: 'A Project',
+		label: 'Design System',
+		body: 'Released our first TODO: Update this.',
+		accent: 'tertiary',
+	},
+	{
+		icon: 'volunteer_activism',
+		stat: '$0+',
+		label: 'Grants Awarded',
+		body: 'TODO: Update this with something else',
+		accent: 'secondary',
+	},
+	{
+		icon: 'terminal',
+		stat: 'nth App',
+		label: 'Launched',
+		body: "TODO: Update this",
+		accent: 'primary',
+	},
+];
+
+const accentMap = {
+	primary: { bg: 'bg-primary/10', text: 'text-primary' },
+	tertiary: { bg: 'bg-tertiary/10', text: 'text-tertiary' },
+	secondary: { bg: 'bg-secondary/10', text: 'text-secondary' },
+};
+---
+
+<section class="px-8 py-24 bg-surface-container-lowest">
+	<div class="max-w-7xl mx-auto">
+		<div class="text-center mb-16">
+			<span class="text-primary font-bold tracking-widest uppercase text-sm">Progress Report</span>
+			<h2 class="text-4xl font-headline font-bold mt-2">Organizational Milestones</h2>
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+			{
+				milestones.map((m) => (
+					<div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+						<div
+							class:list={[
+								'w-16 h-16 rounded-2xl flex items-center justify-center mb-6',
+								accentMap[m.accent].bg,
+								accentMap[m.accent].text,
+							]}
+						>
+							<span class="material-symbols-outlined text-3xl">{m.icon}</span>
+						</div>
+						<h4 class="text-3xl font-black text-on-surface mb-2">{m.stat}</h4>
+						<p class:list={['text-sm font-bold uppercase tracking-widest mb-4', accentMap[m.accent].text]}>
+							{m.label}
+						</p>
+						<p class="text-on-surface-variant text-sm">{m.body}</p>
+					</div>
+				))
+			}
+		</div>
+		<div class="mt-16 text-center">
+			<a
+				class="inline-flex items-center gap-2 font-bold text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/30 decoration-2 underline-offset-8"
+				href="#"
+			>
+				View our full history and origins
+				<span class="material-symbols-outlined text-sm">open_in_new</span>
+			</a>
+		</div>
+	</div>
+</section>

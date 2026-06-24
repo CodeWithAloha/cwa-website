@@ -1,0 +1,115 @@
+---
+// TODO: Pull from meetup or calendar?
+const events = [
+	{
+		month: 'Jul',
+		day: '6',
+		title: 'Civic Tech Night: New Member Social',
+		detail: "6:00 PM • Entrepreneur's Sandbox",
+		accent: 'primary',
+	},
+	{
+		month: 'Aug',
+		day: '03',
+		title: 'Civic Tech Night: New Member Social',
+		detail: "6:00 PM• Entrepreneur's Sandbox",
+		accent: 'tertiary',
+	},
+];
+
+// TODO: Add Photos from our meetups
+const columnA = [
+	'',
+	'',
+	'',
+];
+const columnB = [
+	'',
+	'',
+];
+const heights = ['h-64', 'h-80', 'h-64'];
+---
+
+<section class="bg-surface-container-low overflow-hidden">
+	<div class="max-w-7xl mx-auto px-8 py-24">
+		<div class="grid lg:grid-cols-2 gap-16 items-center">
+			<div>
+				<span class="text-tertiary font-bold tracking-widest uppercase text-sm"
+					>Community</span
+				>
+				<h2 class="text-5xl font-headline font-bold text-on-surface mt-2 mb-6">Join Our Next Meetup!</h2>
+				<p class="text-on-surface-variant text-lg mb-10 max-w-lg">
+        We are civic tech volunteers interested in utilizing technology to improve our local communities.
+				</p>
+				<div class="space-y-4 mb-10">
+					{
+						events.map((ev) => (
+							<div
+								class:list={[
+									'bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-6 group cursor-pointer',
+									ev.accent === 'tertiary' && 'border-l-4 border-tertiary',
+								]}
+							>
+								<div
+									class:list={[
+										'p-4 rounded-xl flex flex-col items-center justify-center min-w-[70px]',
+										ev.accent === 'tertiary'
+											? 'bg-tertiary/10 text-tertiary'
+											: 'bg-primary/10 text-primary',
+									]}
+								>
+									<span class="text-xs font-bold uppercase">{ev.month}</span>
+									<span class="text-2xl font-black">{ev.day}</span>
+								</div>
+								<div>
+									<h4
+										class:list={[
+											'font-bold text-lg transition-colors',
+											ev.accent === 'tertiary'
+												? 'group-hover:text-tertiary'
+												: 'group-hover:text-primary',
+										]}
+									>
+										{ev.title}
+									</h4>
+									<p class="text-sm text-on-surface-variant">{ev.detail}</p>
+								</div>
+							</div>
+						))
+					}
+				</div>
+				<button class="flex items-center gap-2 text-primary font-bold group">
+					Explore Full Calendar
+					<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+						>arrow_forward</span
+					>
+				</button>
+			</div>
+
+			<div class="relative h-[600px] flex gap-4 overflow-hidden mask-fade-vertical">
+				<div class="flex flex-col gap-4 animate-marquee-vertical py-4">
+					{
+						columnA.map((src, i) => (
+							<img
+								class:list={['w-full object-cover rounded-3xl shadow-lg', heights[i % heights.length]]}
+								src={src}
+								alt=""
+							/>
+						))
+					}
+				</div>
+				<div class="flex flex-col gap-4 animate-marquee-vertical-slow py-4 mt-12">
+					{
+						columnB.map((src, i) => (
+							<img
+								class:list={['w-full object-cover rounded-3xl shadow-lg', i === 0 ? 'h-80' : 'h-64']}
+								src={src}
+								alt=""
+							/>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

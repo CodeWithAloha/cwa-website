@@ -1,23 +1,142 @@
+---
+const {
+	title = 'Code with Aloha | Bridging Tech with the Heart of Hawaii',
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+
+		<script is:inline src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script is:inline id="tailwind-config">
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							'on-background': '#38312e',
+							error: '#ac3434',
+							'tertiary-fixed': '#ffa26b',
+							'surface-container-highest': '#ece0db',
+							'on-tertiary-fixed': '#3a1600',
+							'on-secondary': '#e7ffea',
+							'secondary-container': '#a2ffc0',
+							'tertiary-dim': '#893d00',
+							'primary-fixed': '#85dbf8',
+							'on-error': '#fff7f6',
+							'tertiary-container': '#ffa26b',
+							secondary: '#006e3e',
+							'tertiary-fixed-dim': '#ff8d44',
+							'primary-fixed-dim': '#77cde9',
+							'on-surface-variant': '#665d5a',
+							surface: '#fff8f6',
+							'secondary-fixed-dim': '#94f0b3',
+							'secondary-fixed': '#a2ffc0',
+							outline: '#827975',
+							'on-tertiary-container': '#5d2700',
+							'surface-container-low': '#fcf2ee',
+							'on-primary-fixed-variant': '#00566a',
+							'on-primary-fixed': '#003745',
+							'inverse-on-surface': '#a39b99',
+							'error-dim': '#70030f',
+							background: '#fff8f6',
+							'outline-variant': '#bab0ab',
+							'on-tertiary': '#fff7f5',
+							'on-secondary-fixed': '#00502b',
+							'inverse-primary': '#85dbf8',
+							primary: '#00687f',
+							'on-primary': '#f1faff',
+							'inverse-surface': '#110d0c',
+							'secondary-dim': '#006035',
+							'error-container': '#f56965',
+							'surface-variant': '#ece0db',
+							'surface-container-lowest': '#ffffff',
+							'surface-container': '#f6ece8',
+							'primary-container': '#85dbf8',
+							'on-error-container': '#65000b',
+							'on-surface': '#38312e',
+							'surface-tint': '#00687f',
+							'surface-bright': '#fff8f6',
+							'primary-dim': '#005b70',
+							'surface-dim': '#e4d7d2',
+							'surface-container-high': '#f1e6e2',
+							'on-secondary-container': '#006438',
+							'on-secondary-fixed-variant': '#00703f',
+							'on-primary-container': '#004c5e',
+							tertiary: '#9c4600',
+							'on-tertiary-fixed-variant': '#6b2e00',
+						},
+						borderRadius: {
+							DEFAULT: '0.25rem',
+							lg: '0.5rem',
+							xl: '0.75rem',
+							full: '9999px',
+						},
+						fontFamily: {
+							headline: ['Plus Jakarta Sans'],
+							body: ['Be Vietnam Pro'],
+							label: ['Be Vietnam Pro'],
+						},
+					},
+				},
+			};
+		</script>
 	</head>
-	<body>
+	<body
+		class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container"
+	>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style is:global>
+	.material-symbols-outlined {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+		vertical-align: middle;
+	}
+	.kapa-pattern {
+		background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40' fill='%239c4600' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	.no-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	@keyframes marquee-vertical {
+		0% {
+			transform: translateY(0);
+		}
+		100% {
+			transform: translateY(-50%);
+		}
+	}
+	.animate-marquee-vertical {
+		animation: marquee-vertical 40s linear infinite;
+	}
+	.animate-marquee-vertical-slow {
+		animation: marquee-vertical 55s linear infinite;
+	}
+	.mask-fade-vertical {
+		-webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+		mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 	}
 </style>

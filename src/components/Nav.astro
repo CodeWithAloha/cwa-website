@@ -1,0 +1,39 @@
+---
+const links = ['Our Story', 'History', 'Projects', 'Events', 'Community'];
+---
+
+<nav
+	class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm shadow-cyan-900/5"
+>
+	<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+		<div
+			class="text-2xl font-bold bg-gradient-to-br from-cyan-700 to-cyan-900 bg-clip-text text-transparent dark:from-cyan-300 dark:to-cyan-100 font-headline tracking-tight"
+		>
+			Code with Aloha
+		</div>
+		<div class="hidden md:flex gap-8 items-center">
+			{
+				links.map((link) => (
+					<a
+						class="text-slate-600 dark:text-slate-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors font-headline font-bold"
+						href="#"
+					>
+						{link}
+					</a>
+				))
+			}
+		</div>
+		<div class="flex items-center gap-4">
+			<button
+				class="hidden lg:block text-cyan-700 dark:text-cyan-400 font-bold hover:opacity-90 transition-all duration-300 active:scale-95"
+			>
+				Join Us
+			</button>
+			<button
+				class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:opacity-90 transition-all duration-300 active:scale-95 shadow-sm"
+			>
+				Donate
+			</button>
+		</div>
+	</div>
+</nav>
