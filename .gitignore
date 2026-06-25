@@ -1,0 +1,25 @@
+### Astro ###
+# Gitignore template for Astro projects
+# Ignore content collection generated files
+.astro
+
+### Node ###
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variable files
+.env* 
+
