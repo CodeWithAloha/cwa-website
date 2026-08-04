@@ -1,0 +1,41 @@
+---
+// TODO: Replace with url of Hero Image
+const heroImage =
+	'';
+---
+
+<section class="relative px-8 py-20 lg:py-32 max-w-7xl mx-auto overflow-hidden">
+	<div class="grid lg:grid-cols-2 gap-12 items-center">
+		<div class="relative z-10">
+			<h1
+				class="text-6xl lg:text-8xl font-headline font-extrabold tracking-tighter text-primary leading-tight mb-6"
+			>
+				TODO: Insert tagline <br />Here.
+			</h1>
+			<p class="text-xl text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+      In the spirit of <span class="font-bold text-tertiary italic">TODO</span>: Insert Description Here
+      </p>
+			<div class="flex flex-wrap gap-4">
+				<button
+					class="bg-primary text-on-primary px-8 py-4 rounded-full text-lg font-bold hover:scale-[1.02] transition-transform"
+					>Get Involved</button
+				>
+				<button
+					class="bg-surface-container-high text-on-surface px-8 py-4 rounded-full text-lg font-bold hover:bg-surface-container-highest transition-colors"
+					>Our Impact</button
+				>
+			</div>
+		</div>
+		<div class="relative lg:ml-auto w-full aspect-square md:aspect-video lg:aspect-square">
+			<div
+				class="absolute inset-0 bg-primary-container/20 rounded-[2rem] -rotate-3 translate-x-4 translate-y-4"
+			>
+			</div>
+			<img
+				alt="Image of Hawaii or Code With Aloha"
+				class="relative z-10 w-full h-full object-cover rounded-[2rem] shadow-2xl shadow-primary/20"
+				src={heroImage}
+			/>
+		</div>
+	</div>
+</section>

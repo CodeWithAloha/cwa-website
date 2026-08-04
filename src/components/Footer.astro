@@ -1,0 +1,55 @@
+---
+const columns = [
+	{
+		title: 'Connect',
+		links: ['Code of Conduct', 'Privacy Policy', 'GitHub', 'Volunteer Login'],
+	},
+	{
+		title: 'Support',
+		links: ['Sponsor Us', 'Merch Store', 'Contact Us'],
+	},
+];
+---
+
+<footer
+	class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-200/50 dark:border-slate-800/50 font-body text-sm"
+>
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 max-w-7xl mx-auto">
+		<div>
+			<div class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4">Code with Aloha</div>
+			<p class="text-slate-500 mb-6 max-w-sm">
+      TODO: Update this
+			</p>
+			<div class="flex gap-4">
+				<a class="text-slate-500 hover:text-cyan-600 transition-all" href="#"
+					><span class="material-symbols-outlined">public</span></a
+				>
+				<a class="text-slate-500 hover:text-cyan-600 transition-all" href="#"
+					><span class="material-symbols-outlined">alternate_email</span></a
+				>
+			</div>
+		</div>
+		<div class="grid grid-cols-2 gap-8">
+			{
+				columns.map((col) => (
+					<div class="flex flex-col gap-3">
+						<div class="font-bold text-slate-800 dark:text-slate-200 mb-2 uppercase text-xs tracking-widest">
+							{col.title}
+						</div>
+						{col.links.map((link) => (
+							<a class="text-slate-500 hover:text-cyan-600 transition-all" href="#">
+								{link}
+							</a>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</div>
+	<div
+		class="px-12 py-8 max-w-7xl mx-auto border-t border-slate-200/50 text-center md:text-left text-slate-400"
+	>
+  TOOD: Update this too
+		© 2026 Code with Aloha. 
+	</div>
+</footer>
