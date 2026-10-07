@@ -16,13 +16,6 @@ const milestones = [
 		accent: 'tertiary',
 	},
 	{
-		icon: 'volunteer_activism',
-		stat: '$0+',
-		label: 'Grants Awarded',
-		body: 'TODO: Update this with something else',
-		accent: 'secondary',
-	},
-	{
 		icon: 'terminal',
 		stat: 'nth App',
 		label: 'Launched',
@@ -44,7 +37,7 @@ const accentMap = {
 			<span class="text-primary font-bold tracking-widest uppercase text-sm">Progress Report</span>
 			<h2 class="text-4xl font-headline font-bold mt-2">Organizational Milestones</h2>
 		</div>
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			{
 				milestones.map((m) => (
 					<div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
